@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+    </head>
+    <body>
+        <a href="/">Home</a>
+
+        <form action="deleteparcel" method="post">
+            _id
+            <input type="text" name="_id" /> </br>
+            <p>OR</p>
+            Sender
+            <input type="text" name="sender" /> </br>
+            <button submit>Submit</button>
+        </form>
+        OR DELETE ALL by criteria
+        <form action="deleteparcelsearch" method="post">
+            <select name="deletetype" id="deletetype">
+                <option value="weight">Weight</option>
+                <option value="address">Address</option>
+                <option value="fragile">Fragile</option>
+            </select>
+
+            <input type="text" name="searchcriteria" /> </br>
+            <button submit>Delete All</button>
+        </form>
+
+  </body>
+</html>
+    

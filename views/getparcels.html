@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+    </head>
+    <body>
+        <a href="/">Home</a>
+
+        <form action="getparcelsender" method="post">
+            Sender
+            <input type="text" name="sender" /> </br>
+            <button submit>Get By Sender</button>
+        </form>
+
+        <form action="getparcelsweight" method="post">
+            Min Weight
+            <input type="number" name="minWeight" step=".01" /> </br>
+            Max Weight
+            <input type="number" name="maxWeight" step=".01" /> </br>
+            <button submit>Get By Weight</button>
+        </form>
+
+        <table class="table table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Sender</th>
+                <th>Address</th>
+                <th>Weight</th>
+                <th>Fragile</th>
+                <th>Cost</th>
+            </tr>
+            <% for ( let i =0; i< postDocs.length;i++){ %>
+                <tr>
+                    <td><%= postDocs[i]._id %></td>
+                    <td>
+                        <%= postDocs[i].sender %>
+                    </td>
+                    <td>
+                        <%= postDocs[i].address %>
+                    </td>
+                    <td>
+                        <%= postDocs[i].weight %>
+                    </td>
+                    <td>
+                        <%= postDocs[i].fragile %>
+                    </td>
+                    <td>
+                        <%= postDocs[i].cost %>
+                    </td>
+                </tr>
+                <% }%>
+     </table>
+
+  </body>
+</html>
+    
